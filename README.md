@@ -3,7 +3,14 @@
 A modern, enterprise-grade project management dashboard inspired by tools like Monday.com. Built using HTML, CSS, Bootstrap, and JavaScript, this UI focuses on productivity, clarity, and scalability for teams.
 
 ## 🚀 Live Preview
-(Add your live link here if hosted)
+
+https://vsanthosh22.github.io/enterprise-project-management-ui/calendar.html
+https://vsanthosh22.github.io/enterprise-project-management-ui/clients.html
+https://vsanthosh22.github.io/enterprise-project-management-ui/dashboard.html
+https://vsanthosh22.github.io/enterprise-project-management-ui/files.html
+https://vsanthosh22.github.io/enterprise-project-management-ui/messages.html
+https://vsanthosh22.github.io/enterprise-project-management-ui/resources.html
+https://vsanthosh22.github.io/enterprise-project-management-ui/tasks.html
 
 ## 📌 Features
 
