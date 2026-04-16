@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusWork — Client Portal</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!-- Google Fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- NexusWork Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Apply saved theme ASAP (avoid flash) -->
+    <script>
+        (function () {
+            var t = localStorage.getItem('nw-theme') || 'dark';
+            document.documentElement.setAttribute('data-bs-theme', t);
+        })();
+    </script>
+</head>
+<body>
+
+    <header class="nw-topbar">
+        <!-- Mobile hamburger -->
+        <button class="nw-icon-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#nwOffcanvas" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <!-- Logo -->
+        <a href="dashboard.html" class="d-flex align-items-center gap-2 text-decoration-none">
+            <div class="nw-logo-mark">N</div>
+            <span class="nw-logo-name d-none d-md-block">NexusWork</span>
+        </a>
+        <!-- Search (hidden on xs) -->
+        <div class="nw-search-wrap flex-fill d-none d-md-block" style="max-width:340px;margin-left:1.25rem">
+            <i class="fa-solid fa-magnifying-glass nw-search-icon"></i>
+            <input class="form-control form-control-sm" type="text" placeholder="Search tasks, files, people…">
+        </div>
+        <!-- Right actions -->
+        <div class="d-flex align-items-center gap-1 ms-auto">
+            <button class="nw-icon-btn" data-bs-toggle="tooltip" title="Notifications">
+                <i class="fa-solid fa-bell"></i>
+                <span class="nw-badge"></span>
+            </button>
+            <button class="nw-icon-btn d-none d-sm-grid" data-bs-toggle="tooltip" title="Help">
+                <i class="fa-regular fa-circle-question"></i>
+            </button>
+            <button class="nw-icon-btn d-none d-sm-grid" data-bs-toggle="tooltip" title="Settings">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+            <!-- Theme Toggle -->
+            <button class="nw-theme-btn nw-theme-toggle" data-bs-toggle="tooltip" title="Toggle Theme">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+            <div class="nw-avatar ms-1" data-bs-toggle="tooltip" title="Sarah Chen">SC</div>
+        </div>
+    </header>
+
+
+    <div class="offcanvas offcanvas-start nw-offcanvas-sidebar d-lg-none" tabindex="-1" id="nwOffcanvas" aria-labelledby="nwOffcanvasLabel">
+        <div class="offcanvas-header" style="border-bottom:1px solid var(--nw-border)">
+            <div class="d-flex align-items-center gap-2">
+                <div class="nw-logo-mark">N</div>
+                <span class="nw-logo-name">NexusWork</span>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-2">
+            <div class="nw-nav-label mt-2">Workspace</div>
+            <a href="dashboard.html" class="nw-nav-link " data-page="dashboard.html"><i class="fa-solid fa-gauge-high fa-fw"></i><span>Dashboard</span></a>
+            <a href="tasks.html" class="nw-nav-link " data-page="tasks.html"><i class="fa-solid fa-square-check fa-fw"></i><span>Tasks</span><span class="nw-nav-count">12</span></a>
+            <a href="messages.html" class="nw-nav-link " data-page="messages.html"><i class="fa-solid fa-comments fa-fw"></i><span>Messages</span><span class="nw-nav-count">4</span></a>
+            <a href="files.html" class="nw-nav-link " data-page="files.html"><i class="fa-solid fa-folder-open fa-fw"></i><span>Files</span></a>
+            <a href="resources.html" class="nw-nav-link " data-page="resources.html"><i class="fa-solid fa-users fa-fw"></i><span>Resources</span></a>
+            <a href="clients.html" class="nw-nav-link active" data-page="clients.html"><i class="fa-solid fa-building fa-fw"></i><span>Clients</span></a>
+            <a href="calendar.html" class="nw-nav-link " data-page="calendar.html"><i class="fa-solid fa-calendar-days fa-fw"></i><span>Calendar</span></a>
+
+            <div class="nw-sidebar-divider"></div>
+            <div class="nw-nav-label">Projects</div>
+            <div class="nw-nav-link" style="cursor:pointer"><span class="nw-project-dot" style="background:#00dcd2"></span><span>Apex Redesign</span></div>
+            <div class="nw-nav-link" style="cursor:pointer"><span class="nw-project-dot" style="background:#7c6ff7"></span><span>Mobile App v3</span></div>
+            <div class="nw-nav-link" style="cursor:pointer"><span class="nw-project-dot" style="background:#f5a623"></span><span>Data Pipeline</span></div>
+            <div class="nw-nav-link" style="cursor:pointer"><span class="nw-project-dot" style="background:#1fd689"></span><span>Client Portal</span></div>
+            <div class="nw-nav-link" style="cursor:pointer"><span class="nw-project-dot" style="background:#f04e6e"></span><span>Brand Refresh</span></div>
+
+            <div class="nw-sidebar-divider"></div>
+            <div class="d-flex align-items-center gap-2 p-2">
+                <div class="nw-av" style="width:32px;height:32px;font-size:12px;background:linear-gradient(135deg,#7c6ff7,#00dcd2)">SC</div>
+                <div><div style="font-size:.82rem;font-weight:500;color:var(--nw-text-1)">Sarah Chen</div><div style="font-size:.7rem;color:var(--nw-text-3)">Project Manager</div></div>
+            </div>
+        </div>
+    </div>
+    <aside class="nw-sidebar d-none d-lg-flex flex-column p-2">
+        <div class="nw-nav-label mt-2">Workspace</div>
+        <a href="dashboard.html" class="nw-nav-link " data-page="dashboard.html"><i class="fa-solid fa-gauge-high fa-fw"></i><span>Dashboard</span></a>
+        <a href="tasks.html" class="nw-nav-link " data-page="tasks.html"><i class="fa-solid fa-square-check fa-fw"></i><span>Tasks</span><span class="nw-nav-count">12</span></a>
+        <a href="messages.html" class="nw-nav-link " data-page="messages.html"><i class="fa-solid fa-comments fa-fw"></i><span>Messages</span><span class="nw-nav-count">4</span></a>
+        <a href="files.html" class="nw-nav-link " data-page="files.html"><i class="fa-solid fa-folder-open fa-fw"></i><span>Files</span></a>
+        <a href="resources.html" class="nw-nav-link " data-page="resources.html"><i class="fa-solid fa-users fa-fw"></i><span>Resources</span></a>
+        <a href="clients.html" class="nw-nav-link active" data-page="clients.html"><i class="fa-solid fa-building fa-fw"></i><span>Clients</span></a>
+        <a href="calendar.html" class="nw-nav-link " data-page="calendar.html"><i class="fa-solid fa-calendar-days fa-fw"></i><span>Calendar</span></a>
+
+        <div class="nw-sidebar-divider"></div>
+        <div class="nw-nav-label">Projects</div>
+        <div class="nw-nav-link" style="cursor:pointer"><span class="nw-project-dot" style="background:#00dcd2"></span><span>Apex Redesign</span></div>
+        <div class="nw-nav-link" style="cursor:pointer"><span class="nw-project-dot" style="background:#7c6ff7"></span><span>Mobile App v3</span></div>
+        <div class="nw-nav-link" style="cursor:pointer"><span class="nw-project-dot" style="background:#f5a623"></span><span>Data Pipeline</span></div>
+        <div class="nw-nav-link" style="cursor:pointer"><span class="nw-project-dot" style="background:#1fd689"></span><span>Client Portal</span></div>
+        <div class="nw-nav-link" style="cursor:pointer"><span class="nw-project-dot" style="background:#f04e6e"></span><span>Brand Refresh</span></div>
+
+        <div class="nw-sidebar-user">
+            <div class="nw-sidebar-user-card">
+                <div class="nw-av" style="width:32px;height:32px;font-size:12px;background:linear-gradient(135deg,#7c6ff7,#00dcd2)">SC</div>
+                <div class="flex-fill">
+                    <div style="font-size:.82rem;font-weight:500;color:var(--nw-text-1)">Sarah Chen</div>
+                    <div style="font-size:.7rem;color:var(--nw-text-3)">Project Manager</div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical fa-xs" style="color:var(--nw-text-3)"></i>
+            </div>
+        </div>
+    </aside>
+    <main class="nw-main">
+
+        <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4 nw-fade-up">
+            <div>
+                <div class="nw-page-title">Client Portal</div>
+                <div class="nw-page-sub">4 active client relationships &middot; 15 open projects</div>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-nw-ghost btn-sm"><i class="fa-solid fa-filter me-1"></i>Filter</button>
+                <button class="btn btn-nw-ghost btn-sm"><i class="fa-solid fa-file-export me-1"></i>Export Report</button>
+                <button class="btn btn-nw-primary btn-sm"><i class="fa-solid fa-plus me-1"></i>Add Client</button>
+            </div>
+        </div>
+
+        <!-- STAT ROW -->
+        <div class="row g-3 mb-4">
+            <div class="col-6 col-md-3 nw-fade-up">
+                <div class="nw-stat-card cyan">
+                    <div class="nw-stat-icon"><i class="fa-solid fa-building"></i></div>
+                    <div class="nw-stat-label">Active Clients</div>
+                    <div class="nw-stat-value text-nw-cyan">4</div>
+                    <div class="nw-stat-sub">2 onboarding</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 nw-fade-up">
+                <div class="nw-stat-card green">
+                    <div class="nw-stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <div class="nw-stat-label">Open Projects</div>
+                    <div class="nw-stat-value text-nw-green">15</div>
+                    <div class="nw-stat-sub"><i class="fa-solid fa-arrow-up fa-xs text-nw-green me-1"></i>3 this month</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 nw-fade-up">
+                <div class="nw-stat-card amber">
+                    <div class="nw-stat-icon"><i class="fa-regular fa-clock"></i></div>
+                    <div class="nw-stat-label">Pending Reviews</div>
+                    <div class="nw-stat-value text-nw-amber">6</div>
+                    <div class="nw-stat-sub">Awaiting approval</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 nw-fade-up">
+                <div class="nw-stat-card violet">
+                    <div class="nw-stat-icon"><i class="fa-solid fa-comments"></i></div>
+                    <div class="nw-stat-label">Unread Messages</div>
+                    <div class="nw-stat-value text-nw-violet">8</div>
+                    <div class="nw-stat-sub">From 3 clients</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLIENT CARDS -->
+        <div class="row g-4 mb-4 nw-fade-up" id="client-cards"></div>
+
+        <!-- PROJECT TABLE -->
+        <div class="nw-card nw-fade-up">
+            <div class="card-header">
+                <span class="nw-card-title flex-fill"><i class="fa-solid fa-table-list me-2"></i>All Client Projects</span>
+                <div class="nw-tab-bar me-2">
+                    <button class="nw-tab active">Active</button>
+                    <button class="nw-tab">Completed</button>
+                    <button class="nw-tab">On Hold</button>
+                </div>
+                <button class="btn btn-nw-ghost btn-sm"><i class="fa-solid fa-file-export me-1"></i>Export</button>
+            </div>
+            <div class="table-responsive">
+                <table class="nw-table">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Project</th>
+                            <th>PM</th>
+                            <th>Status</th>
+                            <th>Progress</th>
+                            <th>ETA</th>
+                            <th>Budget</th>
+                        </tr>
+                    </thead>
+                    <tbody id="proj-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- NexusWork Shared JS -->
+    <script src="js/nexuswork.js"></script>
+    <!-- Page-specific JS -->
+    <script src="js/clients.js"></script>
+</body>
+</html>
